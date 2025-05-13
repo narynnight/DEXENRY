@@ -1,0 +1,355 @@
+ /* Import Google Font
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap'); */
+
+/* Global Styles */
+body, html {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('wandek.jpg'); /* Pastikan path gambar benar */
+    background-size: 100% auto; /* Lebar 100% dan tinggi mengikuti */
+    background-position: center top; /* Posisi gambar tetap di tengah */
+    background-repeat: no-repeat; /* Supaya gambar tidak berulang */
+    background-attachment: fixed;
+    overflow-x: hidden; /* Mencegah scroll horizontal */
+}
+
+
+/* Header & Navbar */
+.navbar {
+    background: rgba(0, 0, 0, 0.7); /* Transparan sedikit */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    position: sticky;
+    top: 0;
+    flex-wrap: wrap; /* Agar tetap responsif */
+    max-width: 1400px;
+    margin: 0 auto;
+    z-index: 1000;
+}
+
+/* Logo */
+.logo img {
+    max-width: 380px; /* Ukuran logo */
+    height: auto;
+    margin-left: 220px;
+}
+
+/* Navigation Menu */
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s;
+    margin-bottom: 10px;
+}
+
+nav ul li a:hover {
+    color: #f39c12;
+}
+
+/* Tombol Login */
+.login-btn {
+    border: 2px solid white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.logout-btn:hover {
+    background: white;
+    color: black;
+}
+
+.logout-btn {
+    border: 2px solid white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.login-btn:hover {
+    background: white;
+    color: black;
+}
+/* Dropdown Styles */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    list-style: none;
+    padding: 0;
+    min-width: 150px;
+    top: 100%;
+    left: 0;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+.dropdown-content li {
+    margin: 0;
+}
+
+.dropdown-content li a {
+    padding: 10px;
+    display: block;
+    color: white;
+    text-decoration: none;
+}
+
+.dropdown-content li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Menampilkan dropdown saat hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.container {
+    max-width: 1200px; /* Sesuaikan dengan kebutuhan */
+    margin: 0 auto; /* Tengah */
+    padding: 0 15px; /* Jaga agar tidak menyentuh tepi layar */
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    background: white; /* Latar belakang hero putih */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 90px;
+}
+
+.cara-peminjaman h2 {
+    font-size: 32px;
+    color: #2c3e50;
+}
+
+.cara-peminjaman h3 {
+    font-size: 24px;
+    color: #34495e;
+}
+
+.cara-peminjaman ol {
+    padding-left: 20px;
+}
+
+.cara-peminjaman ol li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+/* Overlay Tulisan */
+.overlay {
+    margin-right: 30%;
+    margin-left: 20%;
+    position: relative; /* Supaya tetap di atas */
+    z-index: 10;
+    /* text-align: center; */
+    color: #150E3E; /* Warna teks */
+    margin-bottom: 10px;
+}
+
+.overlay h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.overlay p {
+    font-size: 18px;
+}
+
+/* Container Scrolling */
+.scroll-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+@keyframes scrollAnimation {
+    from { transform: translateX(0); }
+    to { transform: translateX(-20%); } /* Loop seamless */
+}
+
+.scroll-content {
+    display: flex;
+    width: max-content;
+    animation: scrollAnimation 60s linear infinite;
+    gap: 40px; /* Jarak antar kartu */
+    flex-wrap: nowrap;
+    overflow-x: hidden;
+    white-space: nowrap;
+    padding: 10px 0;
+}
+
+.scroll-content:hover {
+    animation-play-state: paused;
+}
+
+.scroll-content::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+}
+
+.card {
+    display: inline-block;
+    min-width: 200px;
+    max-width: 250px;
+    flex-shrink: 0;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out; /* Tambah transisi halus */
+    cursor: pointer; /* Biar kelihatan bisa diklik */
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    filter: brightness(80%);
+    transition: transform 0.3s ease-in-out; /* Tambah transisi ke gambar juga */
+}
+
+.card:hover {
+    transform: scale(1.1); /* Zoom seluruh card, bukan cuma gambar */
+}
+
+.card:active {
+    transform: scale(1.1); /* Saat diklik, card lebih membesar */
+}
+
+
+/* Teks di bawah gambar */
+.card-text {
+    text-align: center;
+    justify-content: end;
+    color: white;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 8px;
+    font-size: 14px;
+}
+
+/* Efek Hover Stop */
+.scroll-container:hover .scroll-content {
+    animation-play-state: paused;
+}
+
+/* --- POPUP STYLE --- */
+.popup-container {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+    z-index: 1000;
+}
+
+.popup-container h3 {
+    color: #150E3E;
+    margin-bottom: 10px;
+}
+
+.popup-container p {
+    font-size: 14px;
+}
+
+.popup-container button {
+    background: #150E3E;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.popup-container button:hover {
+    background: #4b2f9e;
+}
+
+/* Latar belakang blur */
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+
+.info{
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    padding-top: 70px;
+}
+
+.info p {
+    color: white;
+}
+
+.info h3{
+    font-size: 24px;
+    color:white;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 90px;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.button-prim,
+.button-sec {
+    color: white;
+    gap: 50px;
+    text-decoration: none;
+}
